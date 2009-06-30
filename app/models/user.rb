@@ -9,6 +9,7 @@
 #  crypted_password          :string(40)      
 #  salt                      :string(40)      
 #  admin                     :boolean(1)      
+#  needs_travel              :boolean
 #  created_at                :datetime        
 #  updated_at                :datetime        
 #  remember_token            :string(255)     
@@ -48,7 +49,8 @@ class User < ActiveRecord::Base
     :identica,
     :blog_url,
     :label,
-    :label_with_id
+    :label_with_id,
+    :needs_travel
 
   # Associations
   has_and_belongs_to_many :proposals

@@ -24,6 +24,7 @@ display_sub_list ||= false
     <div class='user_links'>
       <ul>
         <% if admin? || can_edit?(user) %>
+          <% if user.needs_travel? %><li>Travel assistance required to speak (private)<% end %>
           <li>Email (private): <%= display_link_to(user.email, :mailto => true) %></li>
         <% end -%>
         <% unless user.website.blank? %>
